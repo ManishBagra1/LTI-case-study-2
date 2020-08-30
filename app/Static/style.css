@@ -1,0 +1,24 @@
+.buttons {
+    width: fit-content;
+    margin: auto;
+}
+
+.head {
+    margin: auto;
+    width: fit-content; 
+    padding: 2%;
+}
+
+table {
+    margin: auto;
+}
+.registration {
+    width: fit-content;
+    margin: auto;
+    padding: 3%;
+}
+
+input[type=text] {
+    height: 30px;
+    width: 250px;
+}

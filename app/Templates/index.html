@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="head">
+    <center>
+        <h1>Web Based Student Management System</h1>
+    </center>
+</div>
+<div class="buttons" align='center'>
+    <div class="form-group">
+        <button class="btn btn-primary btn-lg" onclick="window.location.href='addstudent'">
+            <h1>Add New Student</h1>
+        </button>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary btn-lg" onclick="window.location.href='searchstudent'" >
+            <h1>Search for a Student by Id </h1>
+        </button>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary btn-lg" onclick="window.location.href='allstudent'">
+            <h1>Display all the Students </h1>
+        </button>
+    </div>
+</div>
+
+{% endblock content %}

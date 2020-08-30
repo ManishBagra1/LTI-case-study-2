@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="head">
+    <h1>Search Student by Id</h1>
+</div>
+<div class="registration">
+    <form action="." method="get" align='center' >
+        {% csrf_token %}
+        
+        
+        <div class="form-group">
+            <label for="{{form.sid.id_for_label}}">{{form.sid.label}}</label><br>	
+        {{form.sid}}
+        <br>
+        <small id="id_sid" style="color: red;" class="form-text text-muted">{% for error in form.sid.errors %}
+            {{ error }} 
+        {% endfor %}</small>
+        </div>
+            
+        
+        
+      <div class="form-group" >
+        <button type="submit" class="btn btn-primary">submit</button>
+      </div>
+    </form>
+
+    <div class="form-group" align='center'>
+      <button class="btn btn-primary" onclick="window.location.href='http://localhost:8000/'">Back</button>
+    </div>
+</div>
+
+{% endblock content %}

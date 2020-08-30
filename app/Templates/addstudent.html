@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="head">
+    <h1>Student registration</h1>
+</div>
+<div class="registration">
+    <form action="." method="post" align='center' >
+        {% csrf_token %}
+			{% for field in form %}	
+			<div class="form-group">
+				<label for="{{field.id_for_label}}">{{field.label}}</label><br>	
+            {{field}}
+            <small id="{{field.id_for_label}}" style="color: red;" class="form-text text-muted">{% for error in field.errors %}
+                {{ error }} 
+            {% endfor %}</small>
+		    </div>
+            {% endfor %}      
+      <div class="form-group" >
+        <button type="submit" class="btn btn-primary">submit</button>
+      </div>
+    </form>
+
+    <div class="form-group" align='center'>
+      <button class="btn btn-primary" onclick="window.location.href='http://localhost:8000/'">Back</button>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+    $('input:not(#id_gender_0,#id_gender_1)').addClass('form-control');
+    $('select').addClass('form-control')
+
+		function start() {
+			document.getElementById("id_city").addEventListener("change", makeSubmenu, false);
+		}
+		window.addEventListener("load", start, false);
+
+		console.log('hi im connected')
+		var citiesByState = {
+			kochi :'Kerala',
+			Kanpur : 'Kerala',
+			Mumbai : "Maharashtra",
+			Pune : "Maharashtra",
+			Nagpur: "Maharashtra",
+			Bhubaneswar: "Odisha",
+			Puri: "Odisha",
+			Cuttack : "Odisha",
+			Jaipur : "Rajasthan",
+			Ajmer : "Rajasthan",
+			Jodhpur : "Rajasthan" 
+		}
+		function makeSubmenu() {
+			value = document.getElementById('id_city').value
+			State = citiesByState[value]
+			console.log("i'm executing")
+			console.log(value,State)
+			document.getElementById("id_state").innerHTML = "<option>"+ State + "</option>";	
+		}
+        
+	</script>
+
+{% endblock content %}

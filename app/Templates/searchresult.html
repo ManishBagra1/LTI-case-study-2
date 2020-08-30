@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class="head">
+    <h1>Search Result</h1>
+</div>
+
+<div class="registration">
+
+    <div class="result-set">
+        <table class="table table-sm">
+            <thead>
+                <tr>
+                    <th scope="col">Student Id</th>
+                    <td>{{data.sid}}</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Student Name</th>
+                    <td>{{data.name}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Gender</th>
+                    <td>{{data.gender}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Date Of Birth</th>
+                    <td>{{data.dob}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">City</th>
+                    <td>{{data.city}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">State</th>
+                    <td>{{data.state}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Email</th>
+                    <td>{{data.email}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Qualification</th>
+                    <td>{{data.qualification}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Stream</th>
+                    <td>{{data.stream}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" onclick="window.location.href='http://localhost:8000/searchstudent/'">Back</button>
+          </div>
+    </div>
+    
+</div>
+
+
+
+{% endblock content %}
